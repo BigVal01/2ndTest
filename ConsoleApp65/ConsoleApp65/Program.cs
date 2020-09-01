@@ -9,6 +9,7 @@ namespace ConsoleApp65
     class Program
     {
         const int DISPLAY_WEATHER = 1;
+        const int ABOUT = 2;
         static void Main(string[] args)
         {
             List<string> weather = new List<string> { "В городе погода ясная, светит солныфко", "Очень дождливо, не забудьте зонт", "Снег за окном, очень скользко",
@@ -18,6 +19,7 @@ namespace ConsoleApp65
             do
             {
                 Console.WriteLine("1. Узнать погоду в городе");
+                Console.WriteLine("2. О программе");
                 try
                 {
                     choise = Convert.ToInt32(Console.ReadLine());
@@ -30,6 +32,9 @@ namespace ConsoleApp65
                 {
                     case DISPLAY_WEATHER:
                         Console.WriteLine(weather[rand.Next(0, weather.Count)]);
+                        break;
+                    case ABOUT:
+                        Console.WriteLine("Разработал Королёв В.П.");
                         break;
                 }
             } while (choise != 1);
